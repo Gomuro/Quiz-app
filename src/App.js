@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Settings from "./pages/Settings";
+// import Questions from "./pages/Questions";
+// import FinalPage from "./pages/FinalPage";
+import { Box, Container } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container maxWidth ="sm">
+        <Box mt={5} textAlign="center">
+          <Routes>
+            <Route path="/" element={<Settings />} />
+            {/* <Route path="/questions" element={<Questions />} />
+            <Route path="/final" element={<FinalPage />} /> */}
+          </Routes>
+        </Box>
+      </Container>
+    </Router>
   );
 }
 
