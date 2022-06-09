@@ -4,9 +4,8 @@ import {
   Route,
 } from "react-router-dom";
 import Settings from "./pages/Settings";
-// import Questions from "./pages/Questions";
-// import FinalPage from "./pages/FinalPage";
 import { Box, Container } from "@mui/material";
+import Questions from "./pages/Questions";
 
 function App() {
   return (
@@ -15,8 +14,8 @@ function App() {
         <Box mt={5} textAlign="center">
           <Routes>
             <Route path="/" element={<Settings />} />
-            {/* <Route path="/questions" element={<Questions />} />
-            <Route path="/final" element={<FinalPage />} /> */}
+             <Route path="/questions" element={<Questions />} />
+            {/* <Route path="/final" element={<FinalPage />} />  */}
           </Routes>
         </Box>
       </Container>

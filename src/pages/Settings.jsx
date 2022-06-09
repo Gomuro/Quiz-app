@@ -3,9 +3,13 @@ import React from 'react'
 import SelectField from '../components/SelectField'
 import TextFieldComp from '../components/TextFieldComp'
 import useAxios from '../hooks/useAxios'
+import { useNavigate } from 'react-router-dom'
 
 const Settings = () => {
     const { response, error, loading } = useAxios({ url: "/api_category.php" });
+    const navigate = useNavigate();
+
+
     if(loading) {
         return (
             <Box mt={3}>
@@ -34,7 +38,7 @@ const Settings = () => {
       ];
     const handleSubmit = e => {
         e.preventDefault();
-        
+        navigate("/questions");
     }
 
   return (
@@ -48,7 +52,7 @@ const Settings = () => {
             <SelectField options={typeOptions} label="Type" />
             <TextFieldComp />
             <Box mt={3}>
-                <Button variant="contained"  size="small">Start Quiz</Button>
+                <Button variant="contained"  size="small" type='submit'>Start Quiz</Button>
             </Box>
         </form>
     </>
